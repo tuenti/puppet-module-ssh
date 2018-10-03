@@ -53,7 +53,6 @@ KerberosOrLocalPasswd, KerberosTicketCleanup, KerberosGetAFSToken, TCPKeepAlive,
 # Parameters
 A value of `'USE_DEFAULTS'` will use the defaults specified by the module.
 
-
 hiera_merge
 -----------
 Boolean to merges all found instances of ssh::keys and ssh::config_entries in Hiera.
@@ -657,6 +656,12 @@ packages
 Array of package names used for installation.
 
 - *Default*: Based on OS
+
+packages_ensure
+---------------
+String used for packages state and versioning
+
+- *Default*: installed
 
 permit_root_login
 -----------------

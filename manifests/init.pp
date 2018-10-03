@@ -5,6 +5,7 @@
 class ssh (
   $hiera_merge                            = false,
   $packages                               = 'USE_DEFAULTS',
+  $packages_ensure                        = installed,
   $permit_root_login                      = 'yes',
   $purge_keys                             = true,
   $manage_firewall                        = false,
@@ -881,7 +882,7 @@ class ssh (
   }
 
   package { $packages_real:
-    ensure    => installed,
+    ensure    => $packages_ensure,
     source    => $ssh_package_source_real,
     adminfile => $ssh_package_adminfile_real,
   }
